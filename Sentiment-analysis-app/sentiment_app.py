@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import numpy as np
 
-# Initialize analyzer
+# Initialize analyzer (fixed)
 analyzer = SentimentIntensityAnalyzer()
 
 # Page configuration
@@ -146,14 +146,19 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     st.subheader("📝 Enter Your Text")
+    # ensure sample_text exists in session state and pre-fill text_area when set
+    if 'sample_text' not in st.session_state:
+        st.session_state['sample_text'] = ""
     user_input = st.text_area(
         "Type or paste your text below:",
         height=150,
         placeholder="Enter your text here to analyze sentiment...",
+        value=st.session_state.get('sample_text', ''),
         label_visibility="collapsed"
     )
     
-    analyze_btn = st.button("🚀 Analyze Sentiment", use_container_width=True)
+    # simpler/safer button call
+    analyze_btn = st.button("🚀 Analyze Sentiment")
 
 with col2:
     st.subheader("📊 Quick Stats")
@@ -356,13 +361,14 @@ with st.expander("💡 Need sample text?"):
         "The weather is okay today. Nothing special, but not bad either."
     ]
     for sample in samples:
-        if st.button(f"Use: '{sample[:30]}...'", key=sample):
+        # use unique keys and experimental rerun
+        if st.button(f"Use: '{sample[:30]}...'", key=f"sample_{samples.index(sample)}"):
             st.session_state.sample_text = sample
-            st.rerun()
+            st.experimental_rerun()
 
 # Footer
 st.markdown("""
 <div class="footer">
     Powered by VADER Sentiment Analysis | Built with Streamlit
 </div>
-""", unsafe_allow_html=True)        
+""", unsafe_allow_html=True)
