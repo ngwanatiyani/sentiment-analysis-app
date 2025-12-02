@@ -28,6 +28,7 @@ st.markdown("""
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        color: #ff8c00 !important;
     }
     
     .main {
@@ -85,7 +86,7 @@ st.markdown("""
     .hero-title {
         font-size: clamp(2.5rem, 6vw, 4rem);
         font-weight: 800;
-        background: linear-gradient(135deg, #ffffff 0%, #faf7f2 50%, #f5ede0 100%);
+        background: linear-gradient(135deg, #ff8c00 0%, #ff7f00 50%, #ff6347 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -95,7 +96,7 @@ st.markdown("""
     
     .hero-tagline {
         font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-        color: rgba(255, 255, 255, 0.9);
+        color: #ff8c00;
         font-weight: 400;
         margin-bottom: 2rem;
         line-height: 1.6;
@@ -160,7 +161,7 @@ st.markdown("""
     .section-title {
         font-size: 1.5rem;
         font-weight: 600;
-        color: white;
+        color: #ff8c00;
         margin-bottom: 1rem;
         text-align: center;
     }
@@ -171,7 +172,7 @@ st.markdown("""
         -webkit-backdrop-filter: blur(10px);
         border: 2px solid rgba(255, 255, 255, 0.3);
         border-radius: 16px;
-        color: #1e293b;
+        color: #ff8c00;
         font-size: 16px;
         font-weight: 400;
         padding: 1rem;
@@ -189,8 +190,8 @@ st.markdown("""
     }
     
     .stButton button {
-        background: linear-gradient(135deg, #d4b896 0%, #c9a87c 100%);
-        color: white;
+        background: linear-gradient(135deg, #87ceeb 0%, #add8e6 100%);
+        color: #333333;
         border: none;
         border-radius: 16px;
         padding: 1rem 3rem;
@@ -198,7 +199,7 @@ st.markdown("""
         font-size: 18px;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 
-            0 8px 25px rgba(201, 168, 124, 0.4),
+            0 8px 25px rgba(135, 206, 235, 0.4),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
         width: 100%;
         text-transform: uppercase;
@@ -208,9 +209,9 @@ st.markdown("""
     .stButton button:hover {
         transform: translateY(-3px);
         box-shadow: 
-            0 15px 35px rgba(201, 168, 124, 0.5),
+            0 15px 35px rgba(135, 206, 235, 0.5),
             inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        background: linear-gradient(135deg, #c9a87c 0%, #b8956a 100%);
+        background: linear-gradient(135deg, #add8e6 0%, #9ccce8 100%);
     }
     
     .metric-card {
@@ -384,11 +385,11 @@ with tab1:
                 mode="gauge+number",
                 value=compound_score,
                 domain={'x': [0, 1], 'y': [0, 1]},
-                title={'text': "Sentiment Intensity", 'font': {'size': 20, 'color': 'white'}},
-                number={'font': {'size': 28, 'color': 'white'}},
+                title={'text': "Sentiment Intensity", 'font': {'size': 20, 'color': '#ff8c00'}},
+                number={'font': {'size': 28, 'color': '#ff8c00'}},
                 gauge={
                     'axis': {'range': [-1, 1], 'tickcolor': 'rgba(255,255,255,0.8)'},
-                    'bar': {'color': "#d4b896", 'thickness': 0.3},
+                    'bar': {'color': "#87ceeb", 'thickness': 0.3},
                     'bgcolor': "rgba(255,255,255,0.1)",
                     'borderwidth': 2,
                     'bordercolor': "rgba(255,255,255,0.3)",
@@ -402,7 +403,7 @@ with tab1:
             
             fig_gauge.update_layout(
                 height=350,
-                font={'color': "white", 'family': "Inter"},
+                font={'color': "#ff8c00", 'family': "Inter"},
                 paper_bgcolor='rgba(0,0,0,0)',
                 margin=dict(l=20, r=20, t=40, b=20)
             )
@@ -441,10 +442,10 @@ with tab1:
                 showlegend=False,
                 paper_bgcolor='rgba(0,0,0,0)',
                 plot_bgcolor='rgba(0,0,0,0)',
-                font={'color': "white", 'family': "Inter"},
-                title={'font': {'size': 18, 'color': 'white'}},
-                xaxis={'color': 'white'},
-                yaxis={'color': 'white'},
+                font={'color': "#ff8c00", 'family': "Inter"},
+                title={'font': {'size': 18, 'color': '#ff8c00'}},
+                xaxis={'color': '#ff8c00'},
+                yaxis={'color': '#ff8c00'},
                 margin=dict(l=20, r=20, t=60, b=20)
             )
             
@@ -469,8 +470,8 @@ with tab1:
             
             fig_pie.update_layout(
                 paper_bgcolor='rgba(0,0,0,0)',
-                font={'color': "white", 'family': "Inter"},
-                title={'font': {'size': 18, 'color': 'white'}},
+                font={'color': "#ff8c00", 'family': "Inter"},
+                title={'font': {'size': 18, 'color': '#ff8c00'}},
                 margin=dict(l=20, r=20, t=60, b=20)
             )
             
