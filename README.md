@@ -7,6 +7,4 @@ A beautiful web application that analyzes text sentiment using VADER sentiment a
 - Interactive visualizations
 - Modern UI design
 
-## Installation
-- pip install -r requirements.txt
-- streamlit run sentiment_app.py
+Demo link: https://sentiment-analysis-app-sd3nvmm3ktcm7yhmdxrm6m.streamlit.app/
